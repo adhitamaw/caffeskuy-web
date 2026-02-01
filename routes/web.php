@@ -88,9 +88,10 @@ Route::get('/table-menu/{menu}/edit',[MenuController::class,'editAdmin']);
 Route::put('/table-menu/{menu}',[MenuController::class,'updateAdmin']);
 
 Route::get('/table-user',[UserController::class,'index']);
-Route::post('/table-user/{user}/accept',[UserController::class,'accept']);
-Route::post('/table-user/{user}/reject',[UserController::class,'reject']);
 Route::delete('/table-user/{user}',[UserController::class,'destroy']);
+
+Route::get('/table-review',[RatingsController::class,'indexAdmin']);
+Route::delete('/table-review/{review}',[RatingsController::class,'destroyAdmin']);
 
 });
 

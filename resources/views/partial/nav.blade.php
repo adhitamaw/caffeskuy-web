@@ -136,7 +136,7 @@
                     <!-- Menu untuk User yang Sudah Login -->
                     <span class="user-welcome">
                         Hello, {{ Auth::user()->name }}
-                        @if(Auth::user()->role == 'admin' || Auth::user()->role == 'penjual')
+                        @if(Auth::user()->role == 'admin')
                             <a href="/admin" class="ms-2 text-warning"><i class="fas fa-crown"></i></a>
                         @endif
                     </span>

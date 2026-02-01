@@ -17,4 +17,9 @@ class Review extends Model
     {
         return $this->belongsTo(User::class); // setiap review itu punya 1 user
     }
+
+    public function cafe()
+    {
+        return $this->belongsTo(Cafe::class); // setiap review itu punya 1 cafe
+    }
 }

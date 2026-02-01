@@ -163,4 +163,25 @@ class RatingsController extends Controller
             return redirect('/cafe/' . $cafeId)->with('success', 'Review berhasil dihapus.');
         }
     }
+
+    // Method khusus untuk admin mengelola review
+    public function indexAdmin()
+    {
+        $reviews = Review::with(['user', 'cafe'])->orderBy('created_at', 'desc')->get();
+        
+        return view('admin.reviewIndex', compact('reviews'));
+    }
+
+    public function destroyAdmin($id)
+    {
+        $review = Review::find($id);
+        
+        if (!$review) {
+            return redirect()->back()->with('error', 'Review tidak ditemukan.');
+        }
+        
+        $review->delete();
+        
+        return redirect('/table-review')->with('success', 'Review berhasil dihapus.');
+    }
 }

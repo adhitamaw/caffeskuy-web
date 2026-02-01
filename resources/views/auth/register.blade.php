@@ -73,7 +73,6 @@
                                 <div class="col-md-6">
                                     <select id="role" class="form-control" name="role" onchange="togglePdfForm()">
                                         <option value="user">User</option>
-                                        <option value="penjual">Penjual</option>
                                         <option value="admin">Admin</option>
                                     </select>
                                 </div>

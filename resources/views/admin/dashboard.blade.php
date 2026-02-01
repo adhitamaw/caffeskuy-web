@@ -98,6 +98,12 @@
                 <p>Kelola Menu</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="/table-review" class="nav-link {{ Request::is('table-review*') ? 'active' : '' }}">
+                <i class="nav-icon fa-solid fa-comments"></i>
+                <p>Kelola Review</p>
+              </a>
+            </li>
             @if(Auth::user()->role == 'admin')
               <li class="nav-item">
                 <a href="/table-user" class="nav-link {{ Request::is('table-user*') ? 'active' : '' }}">

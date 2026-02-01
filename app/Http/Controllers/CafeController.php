@@ -36,15 +36,8 @@ class CafeController extends Controller
 
     public function indexAdmin()
     {
-        $user = auth()->user();
-        
-        // Jika pengguna adalah admin, tampilkan semua cafe
-        if ($user->role == 'admin') {
-            $cafe = Cafe::all();
-        } else {
-            // Jika pengguna adalah penjual, tampilkan hanya cafe miliknya
-            $cafe = $user->cafes ?? collect();
-        }
+        // Hanya admin yang bisa mengakses semua cafe
+        $cafe = Cafe::all();
 
         $title = 'Delete Cafe';
         $text = "Are you sure you want to delete?";

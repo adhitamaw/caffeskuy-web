@@ -29,20 +29,16 @@
                 <td><a href="{{asset('pdfs/' . $value->pdf_file)}}">{{$value->pdf_file}}</a></td>
                 <td>{{$value->status}}</td>
                 <td>
-                    <form action="/table-user/{{$value->id}}/accept" method="POST" style="display: inline;">
-                        @csrf
-                        <button type="submit" class="btn btn-info btn-sm">Accept</button>
-                    </form>
-                    <form action="/table-user/{{$value->id}}/reject" method="POST" style="display: inline;">
-                        @csrf
-                        <button type="submit" class="btn btn-warning btn-sm">Reject</button>
-                    </form>
-                    <form action="/table-user/{{$value->id}}" method="POST" style="display: inline;">
-                      @csrf
-                      @method('DELETE')
-                      <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">Delete</button>
-                  </form>
-              </td>
+                    @if($value->role !== 'admin')
+                        <form action="/table-user/{{$value->id}}" method="POST" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">Delete</button>
+                        </form>
+                    @else
+                        <span class="text-muted">Protected</span>
+                    @endif
+                </td>
             </tr>
         @empty
             <p>No cafe</p>

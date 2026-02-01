@@ -1,64 +1,163 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# CoffeSkuy ☕
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sebuah aplikasi web untuk review dan discovery cafe yang dibangun dengan Laravel. CoffeSkuy memungkinkan pengguna untuk menemukan cafe terbaik, membaca dan menulis review, serta menyimpan cafe favorit.
 
-## About Laravel
+## 🚀 Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Pencarian Cafe**: Temukan cafe berdasarkan lokasi dan rating
+- **Review & Rating**: Baca dan tulis review untuk cafe favorit
+- **Favorit**: Simpan cafe favorit untuk akses cepat
+- **User Authentication**: Sistem login dan registrasi yang aman
+- **Admin Dashboard**: Panel admin untuk mengelola cafe dan review
+- **Payment Integration**: Integrasi dengan Stripe untuk pembayaran
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠 Teknologi yang Digunakan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend**: Laravel 11
+- **Frontend**: Blade Templates, Bootstrap
+- **Database**: MySQL
+- **Payment**: Stripe
+- **Authentication**: Laravel Sanctum
+- **Alerts**: SweetAlert2
 
-## Learning Laravel
+## 📋 Prasyarat
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- PHP 8.2 atau lebih tinggi
+- Composer
+- MySQL/MariaDB
+- Node.js & NPM
+- Git
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ⚙️ Instalasi
 
-## Laravel Sponsors
+1. **Clone repository**
+   ```bash
+   git clone [URL_REPOSITORY]
+   cd coffeskuy_new
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+2. **Install dependensi PHP**
+   ```bash
+   composer install
+   ```
 
-### Premium Partners
+3. **Install dependensi JavaScript**
+   ```bash
+   npm install
+   npm run build
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+4. **Setup environment**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Contributing
+5. **Konfigurasi database**
+   Edit file `.env` dan sesuaikan konfigurasi database:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=coffeskuy_db
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. **Konfigurasi Stripe (Optional)**
+   ```env
+   STRIPE_KEY=your_stripe_publishable_key
+   STRIPE_SECRET=your_stripe_secret_key
+   ```
 
-## Code of Conduct
+7. **Migrasi database**
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+8. **Storage link**
+   ```bash
+   php artisan storage:link
+   ```
 
-## Security Vulnerabilities
+9. **Jalankan server**
+   ```bash
+   php artisan serve
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 📁 Struktur Project
 
-## License
+```
+coffeskuy_new/
+├── app/
+│   ├── Http/Controllers/     # Controllers
+│   ├── Models/              # Eloquent Models
+│   └── Http/Middleware/     # Custom Middleware
+├── database/
+│   ├── migrations/          # Database Migrations
+│   └── seeders/            # Database Seeders
+├── resources/
+│   ├── views/              # Blade Templates
+│   └── js/                 # JavaScript Files
+└── routes/
+    └── web.php             # Web Routes
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🎯 Fitur Utama
+
+### User Management
+- Registrasi dan login pengguna
+- Role-based access (User, Admin)
+- Profile management
+
+### Cafe Management
+- CRUD cafe
+- Upload gambar cafe
+- Kategorisasi cafe
+
+### Review System
+- Rating 1-5 bintang
+- Komentar review
+- Filter berdasarkan rating
+
+### Admin Features
+- Dashboard admin
+- Manajemen pengguna
+- Manajemen cafe
+- Monitoring review
+
+## 🔑 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/` | Homepage |
+| GET | `/cafe` | List cafe |
+| GET | `/cafe/{id}` | Detail cafe |
+| POST | `/reviews` | Create review |
+| GET | `/favorites` | User favorites |
+
+## 🤝 Kontribusi
+
+1. Fork repository ini
+2. Buat branch fitur baru (`git checkout -b feature/AmazingFeature`)
+3. Commit perubahan (`git commit -m 'Add some AmazingFeature'`)
+4. Push ke branch (`git push origin feature/AmazingFeature`)
+5. Buat Pull Request
+
+## 📝 License
+
+Proyek ini menggunakan lisensi MIT - lihat file [LICENSE](LICENSE) untuk detail.
+
+## 👥 Tim Pengembang
+
+- **[Nama Tim]** - *Initial work*
+
+## 📧 Kontak
+
+Untuk pertanyaan atau saran, silakan hubungi:
+- Email: [email@example.com]
+- Project Link: [https://github.com/username/coffeskuy]
+
+---
+⭐ Jangan lupa untuk memberikan star jika project ini membantu!

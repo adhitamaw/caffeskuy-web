@@ -6,8 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
-class RoleMiddleware
+class UserMiddleware
 {
     /**
      * Handle an incoming request.
@@ -19,14 +18,14 @@ class RoleMiddleware
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check()) {
-            // Hanya izinkan admin untuk mengakses dashboard admin
-            if (Auth::user()->role == 'admin') {
+            // Izinkan admin dan user untuk mengakses fitur umum
+            if (Auth::user()->role == 'admin' || Auth::user()->role == 'user') {
                 return $next($request);
             } else {
                 if ($request->ajax()) {
                     return response()->json(['error' => 'Access denied'], 403);
                 } else {
-                    return redirect('/')->with('warning', 'Anda tidak memiliki akses admin');
+                    return redirect('/')->with('warning', 'Anda tidak memiliki akses yang diperlukan');
                 }
             }
         } else {
@@ -34,4 +33,3 @@ class RoleMiddleware
         }
     }
 }
-
