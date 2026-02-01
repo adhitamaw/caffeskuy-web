@@ -1,6 +1,63 @@
 # CoffeSkuy
 
-A web application for cafe review and discovery built with Laravel. CoffeSkuy allows users to find the best cafes, read and write reviews, and save favorite cafes.
+A web application for cafe review and discovery built with Laravel.
+
+## Features
+
+- Cafe search and discovery
+- Review and rating system
+- User favorites
+- Admin dashboard
+- Payment integration with Stripe
+
+## Technologies
+
+- Laravel 11
+- MySQL
+- Bootstrap
+- Stripe
+
+## Installation
+
+1. **Clone and install**
+   ```bash
+   git clone https://github.com/adhitamaw/caffeskuy-web.git
+   cd coffeskuy_new
+   composer install
+   npm install && npm run build
+   ```
+
+2. **Setup environment**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+3. **Configure database in .env**
+   ```env
+   DB_DATABASE=coffeskuy_db
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   ```
+
+4. **Run migrations**
+   ```bash
+   php artisan migrate --seed
+   php artisan storage:link
+   php artisan serve
+   ```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+MIT License
 
 ## Key Features
 
@@ -137,27 +194,4 @@ coffeskuy_new/
 | POST | `/reviews` | Create review |
 | GET | `/favorites` | User favorites |
 
-## Contributing
 
-1. Fork this repository
-2. Create a new feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Create a Pull Request
-
-## License
-
-This project uses the MIT license - see the [LICENSE](LICENSE) file for details.
-
-## Development Team
-
-- **[Team Name]** - *Initial work*
-
-## Contact
-
-For questions or suggestions, please contact:
-- Email: [email@example.com]
-- Project Link: [https://github.com/adhitamaw/caffeskuy-web]
-
----
-Don't forget to give a star if this project helps you!
