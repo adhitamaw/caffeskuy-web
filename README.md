@@ -1,17 +1,17 @@
-# CoffeSkuy ☕
+# CoffeSkuy
 
-Sebuah aplikasi web untuk review dan discovery cafe yang dibangun dengan Laravel. CoffeSkuy memungkinkan pengguna untuk menemukan cafe terbaik, membaca dan menulis review, serta menyimpan cafe favorit.
+A web application for cafe review and discovery built with Laravel. CoffeSkuy allows users to find the best cafes, read and write reviews, and save favorite cafes.
 
-## 🚀 Fitur Utama
+## Key Features
 
-- **Pencarian Cafe**: Temukan cafe berdasarkan lokasi dan rating
-- **Review & Rating**: Baca dan tulis review untuk cafe favorit
-- **Favorit**: Simpan cafe favorit untuk akses cepat
-- **User Authentication**: Sistem login dan registrasi yang aman
-- **Admin Dashboard**: Panel admin untuk mengelola cafe dan review
-- **Payment Integration**: Integrasi dengan Stripe untuk pembayaran
+- **Cafe Search**: Find cafes based on location and rating
+- **Review & Rating**: Read and write reviews for favorite cafes
+- **Favorites**: Save favorite cafes for quick access
+- **User Authentication**: Secure login and registration system
+- **Admin Dashboard**: Admin panel to manage cafes and reviews
+- **Payment Integration**: Stripe integration for payments
 
-## 🛠 Teknologi yang Digunakan
+## Technologies Used
 
 - **Backend**: Laravel 11
 - **Frontend**: Blade Templates, Bootstrap
@@ -20,28 +20,28 @@ Sebuah aplikasi web untuk review dan discovery cafe yang dibangun dengan Laravel
 - **Authentication**: Laravel Sanctum
 - **Alerts**: SweetAlert2
 
-## 📋 Prasyarat
+## Prerequisites
 
-- PHP 8.2 atau lebih tinggi
+- PHP 8.2 or higher
 - Composer
 - MySQL/MariaDB
 - Node.js & NPM
 - Git
 
-## ⚙️ Instalasi
+## Installation
 
 1. **Clone repository**
    ```bash
-   git clone [URL_REPOSITORY]
+   git clone [REPOSITORY_URL]
    cd coffeskuy_new
    ```
 
-2. **Install dependensi PHP**
+2. **Install PHP dependencies**
    ```bash
    composer install
    ```
 
-3. **Install dependensi JavaScript**
+3. **Install JavaScript dependencies**
    ```bash
    npm install
    npm run build
@@ -53,8 +53,8 @@ Sebuah aplikasi web untuk review dan discovery cafe yang dibangun dengan Laravel
    php artisan key:generate
    ```
 
-5. **Konfigurasi database**
-   Edit file `.env` dan sesuaikan konfigurasi database:
+5. **Configure database**
+   Edit the `.env` file and adjust database configuration:
    ```env
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
@@ -64,13 +64,13 @@ Sebuah aplikasi web untuk review dan discovery cafe yang dibangun dengan Laravel
    DB_PASSWORD=your_password
    ```
 
-6. **Konfigurasi Stripe (Optional)**
+6. **Configure Stripe (Optional)**
    ```env
    STRIPE_KEY=your_stripe_publishable_key
    STRIPE_SECRET=your_stripe_secret_key
    ```
 
-7. **Migrasi database**
+7. **Database migration**
    ```bash
    php artisan migrate
    php artisan db:seed
@@ -81,12 +81,12 @@ Sebuah aplikasi web untuk review dan discovery cafe yang dibangun dengan Laravel
    php artisan storage:link
    ```
 
-9. **Jalankan server**
+9. **Run server**
    ```bash
    php artisan serve
    ```
 
-## 📁 Struktur Project
+## Project Structure
 
 ```
 coffeskuy_new/
@@ -104,60 +104,60 @@ coffeskuy_new/
     └── web.php             # Web Routes
 ```
 
-## 🎯 Fitur Utama
+## Main Features
 
 ### User Management
-- Registrasi dan login pengguna
+- User registration and login
 - Role-based access (User, Admin)
 - Profile management
 
 ### Cafe Management
-- CRUD cafe
-- Upload gambar cafe
-- Kategorisasi cafe
+- CRUD operations for cafes
+- Cafe image upload
+- Cafe categorization
 
 ### Review System
-- Rating 1-5 bintang
-- Komentar review
-- Filter berdasarkan rating
+- 1-5 star rating system
+- Review comments
+- Filter by rating
 
 ### Admin Features
-- Dashboard admin
-- Manajemen pengguna
-- Manajemen cafe
-- Monitoring review
+- Admin dashboard
+- User management
+- Cafe management
+- Review monitoring
 
-## 🔑 API Endpoints
+## API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/` | Homepage |
-| GET | `/cafe` | List cafe |
-| GET | `/cafe/{id}` | Detail cafe |
+| GET | `/cafe` | List cafes |
+| GET | `/cafe/{id}` | Cafe details |
 | POST | `/reviews` | Create review |
 | GET | `/favorites` | User favorites |
 
-## 🤝 Kontribusi
+## Contributing
 
-1. Fork repository ini
-2. Buat branch fitur baru (`git checkout -b feature/AmazingFeature`)
-3. Commit perubahan (`git commit -m 'Add some AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
-5. Buat Pull Request
+1. Fork this repository
+2. Create a new feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Create a Pull Request
 
-## 📝 License
+## License
 
-Proyek ini menggunakan lisensi MIT - lihat file [LICENSE](LICENSE) untuk detail.
+This project uses the MIT license - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Tim Pengembang
+## Development Team
 
-- **[Nama Tim]** - *Initial work*
+- **[Team Name]** - *Initial work*
 
-## 📧 Kontak
+## Contact
 
-Untuk pertanyaan atau saran, silakan hubungi:
+For questions or suggestions, please contact:
 - Email: [email@example.com]
-- Project Link: [https://github.com/username/coffeskuy]
+- Project Link: [https://github.com/adhitamaw/caffeskuy-web]
 
 ---
-⭐ Jangan lupa untuk memberikan star jika project ini membantu!
+Don't forget to give a star if this project helps you!
